@@ -22,11 +22,17 @@ namespace CRM.Application.CRMs.Commands.Create_Order
             {
 
                 ID_Client = request.ID_Client,
+                ID_Personnel = request.ID_Personnel,
                 Name_Client = request.Name_Client,
                 LastName_Client = request.LastName_Client,
                 Email_Client = request.Email_Client,
                 Type_technology = request.Type_technology,
                 Model_technology = request.Model_technology,
+                Breaking_info = request.Breaking_info,
+                Quipment_info = request.Quipment_info,
+                Status_Order = request.Status_Order,
+                Telefon = request.Telefon,
+                Modifications = new List<string>(null),
                 ID_Order = Guid.NewGuid(),
                 Receipt_date = DateTime.Now,
                 Issue_date = null
