@@ -10,6 +10,6 @@ namespace CRM.Application.CRMs.Commands.Update_Ored_Client
     {
         public Guid ID_Order { get; set; }
         public string Status_Order { get; set; }
-        public List<string> Add_Modifications { get; set; }
+      
     }
 }

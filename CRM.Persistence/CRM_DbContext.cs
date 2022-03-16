@@ -7,8 +7,10 @@ namespace CRM.Persistence
 {
    public class CRM_DbContext: DbContext, ICRM_DbContext
     {
-        public DbSet<Personnel_Data> Personnel_Datas { get; set; }
+      //  public DbSet<Personnel_Data> Personnel_Datas { get; set; }
         public DbSet<Order_Client> Order_Clients { get; set; }
+
+        public DbSet<Personnel_Data> Personnel_Datas { get; set; }
 
         public CRM_DbContext(DbContextOptions<CRM_DbContext> options) 
             : base(options) { }
@@ -16,6 +18,7 @@ namespace CRM.Persistence
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.ApplyConfiguration(new CRM_Configuration());
+            builder.ApplyConfiguration(new Personall_Configuration());
             base.OnModelCreating(builder);
         }
     }

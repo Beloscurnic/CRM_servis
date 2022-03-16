@@ -10,8 +10,9 @@ namespace CRM.Application.Interfaces
 {
     public interface ICRM_DbContext
     {
-        DbSet <Personnel_Data> Personnel_Datas { get; set; }
+      //  DbSet <Personnel_Data> Personnel_Datas { get; set; }
         DbSet<Order_Client> Order_Clients { get; set; }
+        DbSet<Personnel_Data> Personnel_Datas { get; set; }
 
         //Асинхронно сохраняет все изменения, сделанные в этом контексте, в базовой базе данных.
         Task<int> SaveChangesAsync(CancellationToken cancellationToken); 

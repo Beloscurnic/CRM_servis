@@ -15,5 +15,6 @@ namespace CRM.Persistence.Entity_Type_Configurations
             builder.HasIndex(person => person.ID_Order).IsUnique();
             builder.Property(person => person.Name_Client).HasMaxLength(20);
         }
+
     }
 }

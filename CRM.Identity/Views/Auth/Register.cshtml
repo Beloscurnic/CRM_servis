@@ -1,0 +1,73 @@
+﻿@model RegisterViewModel
+<head>
+    <link href=@Url.Content("~/styles/app.css") rel="stylesheet" type="text/css" />
+</head>
+<form asp-controller="Auth" asp-action="Register" method="post">
+    <input type="hidden" asp-for="ReturnUrl" />
+    <div class="header">Sign Up</div>
+    <div class="block">
+        <label>Username</label>
+        <input asp-for="Username" class="input" />
+        <span asp-validation-for="Username"></span>
+    </div>
+    <div class="block">
+        <label>Password</label>
+        <input asp-for="Password" class="input" />
+        <span asp-validation-for="Password"></span>
+    </div>
+    <div class="block">
+        <label>Confirm password</label>
+        <input asp-for="ConfirmPassword" class="input" />
+        <span asp-validation-for="ConfirmPassword"></span>
+    </div>
+    <div class="block">
+        <label>Role</label>
+        <input asp-for="Role" class="input" />
+        <span asp-validation-for="Role"></span>
+    </div>
+    <div class="block">
+        <label>Name</label>
+        <input asp-for="Name" class="input" />
+        <span asp-validation-for="Name"></span>
+    </div>
+    <div class="block">
+        <label>Last_Name</label>
+        <input asp-for="Last_Name" class="input" />
+        <span asp-validation-for="Last_Name"></span>
+    </div>
+    <div class="block">
+        <label>Email</label>
+        <input asp-for="Email" class="input" />
+        <span asp-validation-for="Email"></span>
+    </div>
+    <div class="block">
+        <label>Position</label>
+        <input asp-for="Position" class="input" />
+        <span asp-validation-for="Position"></span>
+    </div>
+    <div class="block">
+        <label>Telefon</label>
+        <input asp-for="Telefon" class="input" />
+        <span asp-validation-for="Telefon"></span>
+    </div>
+    <div class="block">
+        <label>Дата назначения</label>
+        <input asp-for="Appointment_Date" class="input" />
+        <span asp-validation-for="Appointment_Date"></span>
+    </div>
+    <div class="block">
+        <label>Номер полисы</label>
+        <input asp-for="Policy_Number" class="input" />
+        <span asp-validation-for="Policy_Number"></span>
+    </div>
+    <div class="block">
+        <label>Зарплата </label>
+        <input asp-for="Salary" class="input" />
+        <span asp-validation-for="Salary"></span>
+    </div>
+    <div class="block">
+        <button type="submit" class="button">Sign up</button>
+    </div>
+    <a asp-controller="Auth" asp-action="Login" asp-route-returnUrl="@Model.ReturnUrl"
+       class="switch-button">Login</a>
+</form> 

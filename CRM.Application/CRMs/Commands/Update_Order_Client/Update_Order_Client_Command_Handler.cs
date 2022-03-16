@@ -27,7 +27,7 @@ namespace CRM.Application.CRMs.Commands.Update_Ored_Client
                 throw new NotFoundException(nameof(Order_Client), request.ID_Order);
             }
             entity.Status_Order = request.Status_Order;
-            entity.Modifications.Union(request.Add_Modifications);
+     
             entity.Status_Order = request.Status_Order;
 
             await _dbContext.SaveChangesAsync(cancellationToken);

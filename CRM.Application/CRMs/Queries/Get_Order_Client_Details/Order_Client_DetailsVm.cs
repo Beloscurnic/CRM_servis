@@ -19,7 +19,7 @@ namespace CRM.Application.CRMs.Queries.Get_Order_Client_Details
         public string Breaking_info { get; set; }
         public string Quipment_info { get; set; }
         public string Status_Order { get; set; }
-        public List<string> Modifications { get; set; }
+       
         public DateTime Receipt_date { get; set; }
         public DateTime? Issue_date { get; set; }
         public int Price { get; set; }
@@ -36,7 +36,7 @@ namespace CRM.Application.CRMs.Queries.Get_Order_Client_Details
                 .ForMember(ordervm => ordervm.Breaking_info, opt => opt.MapFrom(order => order.Breaking_info))
                 .ForMember(ordervm => ordervm.Quipment_info, opt => opt.MapFrom(order => order.Quipment_info))
                 .ForMember(ordervm => ordervm.Status_Order, opt => opt.MapFrom(order => order.Status_Order))
-                .ForMember(ordervm => ordervm.Modifications, opt => opt.MapFrom(order => order.Modifications))
+               
                 .ForMember(ordervm => ordervm.Receipt_date, opt => opt.MapFrom(order => order.Receipt_date))
                 .ForMember(ordervm => ordervm.Issue_date, opt => opt.MapFrom(order => order.Issue_date))
                 .ForMember(ordervm => ordervm.Price, opt => opt.MapFrom(order => order.Price));

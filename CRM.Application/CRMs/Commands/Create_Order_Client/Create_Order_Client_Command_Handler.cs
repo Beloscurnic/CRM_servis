@@ -20,7 +20,6 @@ namespace CRM.Application.CRMs.Commands.Create_Order
         {
             var order = new Order_Client
             {
-
                 ID_Client = request.ID_Client,
                 ID_Personnel = request.ID_Personnel,
                 Name_Client = request.Name_Client,
@@ -32,7 +31,7 @@ namespace CRM.Application.CRMs.Commands.Create_Order
                 Quipment_info = request.Quipment_info,
                 Status_Order = request.Status_Order,
                 Telefon = request.Telefon,
-                Modifications = new List<string>(null),
+               
                 ID_Order = Guid.NewGuid(),
                 Receipt_date = DateTime.Now,
                 Issue_date = null
