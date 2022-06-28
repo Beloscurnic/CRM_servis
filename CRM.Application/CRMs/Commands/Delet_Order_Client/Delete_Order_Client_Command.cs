@@ -7,6 +7,6 @@ namespace CRM.Application.CRMs.Commands.Delet_Order_Client
 {
    public class Delete_Order_Client_Command: IRequest
     {
-        public Guid ID_Order { get; set; }
+        public int ID_Order { get; set; }
     }
 }

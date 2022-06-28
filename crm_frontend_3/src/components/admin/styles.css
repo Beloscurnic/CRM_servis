@@ -1,0 +1,68 @@
+.divnavlink {
+    margin-top: 2%;
+}
+
+.div_pagination2 {
+    font-size: 16px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    width: 300%;
+    margin-left: 125%;
+    text-align: center;
+}
+
+.div_pagination2 .form__input {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    font-size: 1rem;
+    margin: 0 auto;
+    margin-top: 2%;
+    border-radius: 0.2rem;
+    color: white;
+    background-color: rgb(54, 54, 54);
+    border: none;
+    width: 50%;
+    display: block;
+    transition: all 0.3s;
+    margin-bottom: 2%;
+}
+
+.div_pagination2 .form__input:placeholder-shown+.form__label {
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transform: translateY(-4rem);
+    transform: translateY(-4rem);
+}
+
+.button {
+    background-color: #4CAF50;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 4px 4px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.button5 {
+    background-color: white;
+    color: black;
+    border: 2px solid #505050;
+}
+
+.button5:hover {
+    background-color: #3f3f3f;
+    color: white;
+}
+
+button:disabled,
+button[disabled] {
+    background-color: white;
+    color: rgb(66, 66, 66);
+    border: 2px solid #a09f9f;
+}

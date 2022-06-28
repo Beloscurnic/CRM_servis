@@ -8,8 +8,6 @@ namespace CRM.Application.CRMs.Commands.Create_Order
    public class Create_Order_Client_Command: IRequest<Guid>
     {
 
-        public Guid ID_Client { get; set; }
-        public Guid ID_Personnel { get; set; }
         public string Name_Client { get; set; }
         public string LastName_Client { get; set; }
         public string Email_Client { get; set; }
@@ -17,9 +15,9 @@ namespace CRM.Application.CRMs.Commands.Create_Order
         public string Type_technology { get; set; }
         public string Model_technology { get; set; }
         public string Breaking_info { get; set; }
-        public string Quipment_info { get; set; }
         public string Status_Order { get; set; }
-    //    public List<string> Modifications { get; set; }
-
+        public Guid ID_Client { get; set; }
+        public Guid ID_Personnel_dispatcher { get; set; }
+        public Guid ID_Personnel_master { get; set; }
     }
 }

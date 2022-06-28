@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using CRM.Domain;
 using MediatR;
 using CRM.Application.Interfaces;
+using System.Linq;
 
 namespace CRM.Application.CRMs.Commands.Create_Order
 {
@@ -18,28 +19,43 @@ namespace CRM.Application.CRMs.Commands.Create_Order
         public async Task <Guid> Handle(Create_Order_Client_Command request,
             CancellationToken cancellationToken)
         {
-            var order = new Order_Client
-            {
+            Guid id_client;
+            var client =  _dbContext.Order_Clients
+                          .Where(p => p.Telefon == request.Telefon)
+                          .Select(c => c.ID_Client)
+                          .FirstOrDefault();
 
-                ID_Client = request.ID_Client,
-                ID_Personnel = request.ID_Personnel,
-                Name_Client = request.Name_Client,
-                LastName_Client = request.LastName_Client,
-                Email_Client = request.Email_Client,
-                Type_technology = request.Type_technology,
-                Model_technology = request.Model_technology,
-                Breaking_info = request.Breaking_info,
-                Quipment_info = request.Quipment_info,
-                Status_Order = request.Status_Order,
-                Telefon = request.Telefon,
-                Modifications = new List<string>(null),
-                ID_Order = Guid.NewGuid(),
-                Receipt_date = DateTime.Now,
-                Issue_date = null
-            };
-            await _dbContext.Order_Clients.AddAsync(order, cancellationToken);
-            await _dbContext.SaveChangesAsync(cancellationToken);
-            return order.ID_Client;
+            if (client != null)
+            {
+                id_client = Guid.NewGuid();
+                DateTime localDate = DateTime.Now;
+                DateTime third = new DateTime(localDate.Year, localDate.Month, localDate.Day);
+
+                var order = new Order_Client
+                {
+
+                    ID_Client = id_client,
+                    Name_Client = request.Name_Client,
+                    LastName_Client = request.LastName_Client,
+                    Email_Client = request.Email_Client,
+                    Telefon = request.Telefon,
+
+                    Type_technology = request.Type_technology,
+                    Model_technology = request.Model_technology,
+                    Breaking_info = request.Breaking_info,
+
+                    ID_Personnel_dispatcher = request.ID_Personnel_dispatcher,
+                    ID_Personnel_master = request.ID_Personnel_master,
+                    Status_Order = "Диагностика",
+                    Receipt_date = third,
+                    Issue_date = null,
+
+                    Price = 0
+                };
+                await _dbContext.Order_Clients.AddAsync(order, cancellationToken);
+                await _dbContext.SaveChangesAsync(cancellationToken);
+                return order.ID_Client;
+            } else return Guid.Empty; 
         }
     }
 }

@@ -1,0 +1,56 @@
+﻿@model CRM.Identity.Models.AppUser
+@{
+    ViewBag.Title = $"Edit {Model.UserName}";
+    <link href=@Url.Content("~/styles/app.css") rel="stylesheet" type="text/css" />
+}
+
+<form asp-controller="Auth" asp-action="Edit" method="post">
+    <div class="block">
+        <label asp-for="UserName"></label>
+        <input asp-for="UserName" />
+        <span asp-validation-for="UserName"></span>
+    </div>
+
+    <div class="block">
+        <label asp-for="UserName">Role</label>
+        <select asp-for="Role">
+            <option value="admin">
+                Administrator
+            </option>
+            <option value="dispatcher">
+                Диспетчер
+            </option>
+            <option value="storekeeper">
+                Кладовщик
+            </option>
+            <option value="serviceman">
+                Мастер по ремонту
+            </option>
+        </select>
+    </div>
+        <div class="block">
+            <label asp-for="Email"></label>
+            <input asp-for="Email" />
+            <span asp-validation-for="Email"></span>
+        </div>
+        <div class="block">
+            <label asp-for="Position"></label>
+            <input asp-for="Position" />
+            <span asp-validation-for="Position"></span>
+        </div>
+        <div class="block">
+            <label asp-for="Telefon"></label>
+            <input asp-for="Telefon" />
+            <span asp-validation-for="Telefon"></span>
+        </div>
+        <div class="block">
+            <label asp-for="Salary"></label>
+            <input asp-for="Salary" />
+            <span asp-validation-for="Salary"></span>
+        </div>
+        <div class="block">
+            <button type="submit" class="button">Save</button>
+        </div>
+        <a asp-controller="Auth" asp-action="Get_Personnel"
+           class="switch-button">Персонал</a>
+</form>
