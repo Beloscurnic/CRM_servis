@@ -1,0 +1,51 @@
+﻿@model IEnumerable<CRM.Identity.Models.AppUser>
+  
+
+@{
+    ViewBag.Title = "Персонал";
+    Layout = null;
+}
+<head>
+    <link href=@Url.Content("~/styles/table.css") rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <header class="header-dispetcer">
+        <ul id="navbar">
+            <li><a href="#">Logo</a></li>
+            <li class="empty-li2"> </li>
+            <li><a type='button' class="button-login" href="http://localhost:3000">Главная</a></li>
+            <li><a type='button' class="button-login" href="https://localhost:44335/Auth/Get_Personnel">Персонал</a></li>
+            <li><a type='button' class="button-login" href="https://localhost:44335/Auth/Register">Регистрация</a></li>
+        </ul>
+    </header>
+    <div class='table_div'>
+        <table class='table'>
+            <tr>
+                <td>Имя</td>
+                <td>Фамилия</td>
+                <td>Должность</td>
+                <td>Телефон</td>
+                <td>Email</td>
+                <td></td>
+            </tr>
+            @foreach (var personnel_ in Model)
+            {
+                <tr>
+                    <td>@personnel_.Name</td>
+                    <td>@personnel_.Last_Name</td>
+                    <td>@personnel_.Role</td>
+                    <td>@personnel_.Telefon</td>
+                    <td>@personnel_.Email</td>
+                    <td>
+                        <a asp-controller="Auth" asp-action="Delete"
+                           asp-route-id="@personnel_.ID_Personnal">Delete</a>
+
+                        <a asp-controller="Auth" asp-action="Edit"
+                           asp-route-id="@personnel_.ID_Personnal">Edit</a>
+                    </td>
+                </tr>
+            }
+        </table>
+
+    </div>
+</body>

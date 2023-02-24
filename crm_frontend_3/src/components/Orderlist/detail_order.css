@@ -1,0 +1,38 @@
+.div_order {
+    font-size: 19px;
+    margin-top: 1%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.div_header {
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+    margin-top: 1%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.button-login {
+    border: none;
+    padding: 2px 50px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    background-color: rgb(43, 43, 43);
+    color: #fff;
+}
+
+.button-login:hover {
+    background-color: #f90;
+    color: white;
+}
+
+.div_button {
+    margin-left: 58%;
+    width: 90%;
+    margin-bottom: 2%;
+}
